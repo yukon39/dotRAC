@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <ReleaseNumber Condition="'$(ReleaseNumber)' == ''">0.0.1</ReleaseNumber>
+    <BuildNumber Condition="'$(BUILD_NUMBER)' != ''">$(BUILD_NUMBER)</BuildNumber>
+    <BuildNumber Condition="'$(BUILD_NUMBER)' == ''">0</BuildNumber>
+    <Configuration Condition="'$(Release)' == ''">Release</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x86</Platform>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>$(ReleaseNumber).$(BuildNumber)</Version>
+    <FileVersion>$(Version)</FileVersion>
+    <Product>1C Enterprise Remote Administration .Net Utility</Product>
+    <Copyright>Copyright (c) 2019 Y. Goncharuk (yukon39)</Copyright>
+  </PropertyGroup>
+
+</Project>
