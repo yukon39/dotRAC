@@ -10,9 +10,9 @@ using log4net;
 
 namespace dotRAC.core
 {
-    public class DefaultThrowableResolver : IExceptionResolver
+    public class DefaultExceptionResolver : IExceptionResolver
     {
-        private static readonly ILog logger = LogManager.GetLogger(typeof(DefaultThrowableResolver));
+        private static readonly ILog logger = LogManager.GetLogger(typeof(DefaultExceptionResolver));
 
         public Exception ResolveException(string name, string message)
         {
