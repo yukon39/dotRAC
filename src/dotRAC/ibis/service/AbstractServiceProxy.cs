@@ -20,7 +20,7 @@ namespace dotRAC.ibis.service
 
         protected void CheckLifecycle()
         {
-            if (Transport == default(IV8Transport))
+            if (Transport == default)
             {
                 throw new ArgumentOutOfRangeException("Out of lifecycle!");
             }

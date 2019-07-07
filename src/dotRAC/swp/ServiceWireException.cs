@@ -5,15 +5,17 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-using System.Collections.Generic;
-using dotRAC.ibis.transport;
+using System;
 
-namespace dotRAC.ibis.client
+namespace dotRAC.swp
 {
-    public interface IV8Connection
+    public class ServiceWireException : Exception
     {
-        IV8Transport StartService(string paramString1, List<string> paramList, string paramString2, IV8MessageFormatFactory paramIV8MessageFormatFactory);
+        public ServiceWireException() : base() { }
 
-        bool IsSame(IV8Connection paramIV8Connection);
+        public ServiceWireException(string message) : base(message) { }
+
+        public ServiceWireException(string message, Exception innerException) : base(message, innerException) { }
+
     }
 }

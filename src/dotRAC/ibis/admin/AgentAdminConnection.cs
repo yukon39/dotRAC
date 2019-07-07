@@ -21,7 +21,7 @@ namespace dotRAC.ibis.admin
 
         public AgentAdminConnection(string hostName = "localhost", ushort port = 1545)
         {
-            ServiceProxy = null;
+            //ServiceProxy = null;
 
 
         }

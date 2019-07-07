@@ -6,12 +6,13 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System;
+using dotRAC.ibis.admin.service;
 
 namespace dotRAC.ibis.admin.client
 {
     public interface IAgentAdminConnector : IDisposable
     {
-        IAgentAdminConnection Connect(string hostName, ushort port);
-        void Close(IAgentAdminConnection paramIAgentAdminConnection);
+        IAdminServiceProxy Connect(string hostName, ushort port);
+        void Close(IAdminServiceProxy paramIAgentAdminConnection);
     }
 }
