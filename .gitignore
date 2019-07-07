@@ -1,2 +1,6 @@
 #IDE
 .vs/
+
+#Binary files
+/src/**/[Bb]in/
+/src/**/[Oo]bj/
