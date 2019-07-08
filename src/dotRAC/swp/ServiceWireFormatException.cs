@@ -9,12 +9,12 @@ using System;
 
 namespace dotRAC.swp
 {
-    public class ServiceWireException : Exception
+    internal class ServiceWireFormatException : ServiceWireException
     {
-        public ServiceWireException() : base() { }
+        public ServiceWireFormatException() : base() { }
 
-        public ServiceWireException(string message) : base(message) { }
+        public ServiceWireFormatException(string message) : base(message) { }
 
-        public ServiceWireException(string message, Exception innerException) : base(message, innerException) { }
+        public ServiceWireFormatException(string message, Exception innerException) : base(message, innerException) { }
     }
 }

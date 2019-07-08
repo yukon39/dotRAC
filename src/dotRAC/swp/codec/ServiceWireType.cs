@@ -5,16 +5,22 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-using System;
-
-namespace dotRAC.swp
+namespace dotRAC.swp.codec
 {
-    public class ServiceWireException : Exception
+    public enum ServiceWireType
     {
-        public ServiceWireException() : base() { }
-
-        public ServiceWireException(string message) : base(message) { }
-
-        public ServiceWireException(string message, Exception innerException) : base(message, innerException) { }
+        BOOLEAN = 1,
+        BYTE = 2,
+        SHORT = 3,
+        INT = 4,
+        LONG = 5,
+        FLOAT = 6,
+        DOUBLE = 7,
+        SIZE = 8,
+        NULLABLE_SIZE = 9,
+        STRING = 10,
+        UUID = 11,
+        TYPE = 12,
+        ENDPOINT_ID = 13
     }
 }

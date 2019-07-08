@@ -7,14 +7,14 @@ at http://mozilla.org/MPL/2.0/.
 
 using System;
 
-namespace dotRAC.swp
+namespace dotRAC.swp.codec
 {
-    public class ServiceWireException : Exception
+    internal class ServiceWireCodecException : ServiceWireException
     {
-        public ServiceWireException() : base() { }
+        public ServiceWireCodecException() : base() { }
 
-        public ServiceWireException(string message) : base(message) { }
+        public ServiceWireCodecException(string message) : base(message) { }
 
-        public ServiceWireException(string message, Exception innerException) : base(message, innerException) { }
+        public ServiceWireCodecException(string message, Exception innerException) : base(message, innerException) { }
     }
 }
