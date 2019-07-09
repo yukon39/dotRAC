@@ -5,10 +5,10 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-namespace dotRAC.swp.codec
+namespace dotRAC.swp.codec.version1_0
 {
-    public interface IServiceWireCodec : IServiceWireEncoder, IServiceWireDecoder
+    internal class ServiceWireCodec : IServiceWireCodec
     {
-        ServiceWireCodecVersion Version { get; }
+        public ServiceWireCodecVersion Version => ServiceWireCodecVersion.Version1_0;
     }
 }

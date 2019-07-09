@@ -7,8 +7,8 @@ at http://mozilla.org/MPL/2.0/.
 
 namespace dotRAC.swp.codec
 {
-    public interface IServiceWireCodec : IServiceWireEncoder, IServiceWireDecoder
+    public enum ServiceWireCodecVersion
     {
-        ServiceWireCodecVersion Version { get; }
+        Version1_0 = 256
     }
 }
