@@ -5,27 +5,21 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using dotRAC.core;
 using dotRAC.swp.codec;
-using dotRAC.swp.messages;
 
-namespace dotRAC.swp
+namespace dotRAC.swp.format
 {
     public interface IServiceWireFormat
     {
-        short Version { get; }
+        ServiceWireFormatVersion Version { get; }
 
-        short CodecVersion { get; }
+        ServiceWireCodecVersion CodecVersion { get; }
 
         IExceptionResolver ExceptionResolver { get; }
 
         IServiceWireCodec CreateCodec();
-        
+
         //void EncodeType(ChannelBuffer paramChannelBuffer, IServiceWireEncoder paramIServiceWireEncoder, MessageType paramMessageType);
 
         //MessageType DecodeType(ChannelBuffer paramChannelBuffer, IServiceWireDecoder paramIServiceWireDecoder);

@@ -5,12 +5,14 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
+using dotRAC.swp.codec;
+
 namespace dotRAC.swp
 {
-    public interface IServiceWireFormatFactory
+    public interface IServiceWireMessageFormat
     {
-        short GetDefaultVersion();
-        IServiceWireFormat CreateFormat();
-        IServiceWireFormat CreateFormat(short paramShort1, short paramShort2);
+       // void FormatMessage(ChannelBuffer paramChannelBuffer, IServiceWireEncoder paramIServiceWireEncoder, IServiceWireMessage paramIServiceWireMessage);
+
+        //IServiceWireMessage ParseMessage(ChannelBuffer paramChannelBuffer, IServiceWireDecoder paramIServiceWireDecoder);
     }
 }

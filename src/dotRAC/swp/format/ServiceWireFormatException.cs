@@ -7,7 +7,7 @@ at http://mozilla.org/MPL/2.0/.
 
 using System;
 
-namespace dotRAC.swp
+namespace dotRAC.swp.format
 {
     internal class ServiceWireFormatException : ServiceWireException
     {
