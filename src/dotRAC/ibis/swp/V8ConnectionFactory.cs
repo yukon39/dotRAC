@@ -30,7 +30,7 @@ namespace dotRAC.ibis.swp
             return new V8Connection(connector);
         }
 
-        public void Shutdown()
+        public void Dispose()
         {
             throw new NotImplementedException();
         }

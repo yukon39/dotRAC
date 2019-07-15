@@ -16,6 +16,5 @@ namespace dotRAC.ibis
         public V8Exception(string message) : base(message) { }
 
         public V8Exception(string message, Exception innerException) : base(message, innerException) { }
-
     }
 }

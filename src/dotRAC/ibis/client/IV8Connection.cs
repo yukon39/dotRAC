@@ -10,10 +10,12 @@ using dotRAC.ibis.transport;
 
 namespace dotRAC.ibis.client
 {
-    public interface IV8Connection
+    public interface IV8Connection : IV8Lifecycle<IV8ConnectionContext>
     {
         IV8Transport StartService(string paramString1, List<string> paramList, string paramString2, IV8MessageFormatFactory paramIV8MessageFormatFactory);
 
         bool IsSame(IV8Connection paramIV8Connection);
+
+        void Start(IV8ConnectionContext context);
     }
 }

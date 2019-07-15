@@ -7,11 +7,8 @@ at http://mozilla.org/MPL/2.0/.
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using dotRAC.ibis.admin.service;
 using dotRAC.ibis.client;
+using dotRAC.ibis.service;
 
 namespace dotRAC.ibis.admin
 {
@@ -19,11 +16,27 @@ namespace dotRAC.ibis.admin
     {
         private readonly IV8ConnectionFactory connectionFactory;
 
-        public AgentAdminConnection(string hostName = "localhost", ushort port = 1545)
+        public AgentAdminConnection()
         {
-            //ServiceProxy = null;
+        }
 
+        public void Connect(string hostName = "localhost", ushort port = 1545)
+        {
+            try
+            {
+                IV8Connection connection = connectionFactory.CreateConnection();
+                IV8ConnectionContext connectionContext = new V8ConnectionContext(hostName, port, false, null);
+                connection.Start(connectionContext);
+            }
 
+            catch (V8UnsupportedServiceException e)
+            {
+                //throw new AgentAdminConnectionException(e);
+            }
+            catch (V8Exception e)
+            {
+                //throw new AgentAdminConnectionException(e);
+            }
         }
 
         public void Authenticate(string username, string password) => throw new NotImplementedException();

@@ -11,9 +11,9 @@ using dotRAC.core;
 using dotRAC.swp.codec;
 using dotRAC.swp.format;
 
-namespace dotRAC.swp.net
+namespace dotRAC.swp.netty
 {
-    internal class ConnectorFactory : IServiceWireConnectorFactory
+    public class ConnectorFactory : IServiceWireConnectorFactory
     {
         private readonly IServiceWireFormatFactory formatFactory;
 

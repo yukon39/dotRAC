@@ -6,25 +6,66 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System.Diagnostics.Contracts;
+using System.Timers;
 using dotRAC.core;
 using dotRAC.ibis.client;
+using dotRAC.ibis.host;
 using dotRAC.ibis.server;
+using dotRAC.ibis.swp.Internal;
 using dotRAC.swp;
+using dotRAC.swp.codec;
+using dotRAC.swp.netty;
 
 namespace dotRAC.ibis.swp
 {
     public class V8Integration : IV8Integration
     {
-        public static IExceptionResolver DefaultExceptionResolver = new V8ExceptionResolver();
+        public static ExceptionResolverChain DefaultExceptionResolver = new ExceptionResolverChain(new V8ExceptionResolver(), new DefaultExceptionResolver());
         public static uint DefaultConnectTimeout = 2000;
 
-        private readonly IServiceWireServerFactory serverFactory;
         private readonly IServiceWireConnectorFactory connectorFactory;
+        private readonly IServiceWireServerFactory serverFactory;
 
-        public V8Integration()
+        public V8Integration(IExceptionResolver exceptionResolver)
         {
+            ServiceWireCodecFactory codecFactory = new ServiceWireCodecFactory();
 
+            ExceptionResolverChain exceptionResolverChain = default;
+            if (exceptionResolver == default || exceptionResolver is V8ExceptionResolver)
+            {
+                exceptionResolverChain = DefaultExceptionResolver;
+            }
+            else
+            {
+                exceptionResolverChain = new ExceptionResolverChain(DefaultExceptionResolver, exceptionResolver);
+            }
 
+            connectorFactory = new ConnectorFactory(codecFactory, exceptionResolverChain);
+        }
+
+        public V8Integration(IV8ServerHostProviderFactory hostProviderFactory, IExceptionResolver exceptionResolver)
+        {
+            ServiceWireCodecFactory codecFactory = new ServiceWireCodecFactory();
+
+            ExceptionResolverChain exceptionResolverChain1 = default;
+            ExceptionResolverChain exceptionResolverChain2 = default;
+
+            if (exceptionResolver == null || exceptionResolver is V8ExceptionResolver)
+            {
+                exceptionResolverChain1 = DefaultExceptionResolver;
+                exceptionResolverChain2 = DefaultExceptionResolver;
+            }
+            else
+            {
+                exceptionResolverChain1 = new ExceptionResolverChain(DefaultExceptionResolver, exceptionResolver);
+                exceptionResolverChain2 = new ExceptionResolverChain(exceptionResolver, DefaultExceptionResolver);
+            }
+
+            connectorFactory = new ConnectorFactory(codecFactory, exceptionResolverChain1);
+
+            EndpointHandlerRegistryFactory registryFactory = new EndpointHandlerRegistryFactory(hostProviderFactory);
+
+            serverFactory = new ServerFactory(codecFactory, exceptionResolverChain2, registryFactory);
 
         }
 
@@ -42,6 +83,11 @@ namespace dotRAC.ibis.swp
         {
             Contract.Requires(connectorFactory != default);
             return new V8ConnectionFactory(connectorFactory);
+        }
+
+        public IV8ConnectionFactory CreateConnectionFactory(Timer paramTimer, long paramLong)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -5,14 +5,15 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
+using DotNetty.Buffers;
 using dotRAC.swp.codec;
 
 namespace dotRAC.swp
 {
     public interface IServiceWireMessageFormat
     {
-       // void FormatMessage(ChannelBuffer paramChannelBuffer, IServiceWireEncoder paramIServiceWireEncoder, IServiceWireMessage paramIServiceWireMessage);
+       void FormatMessage(IByteBuffer buffer, IServiceWireEncoder encoder, IServiceWireMessage msg);
 
-        //IServiceWireMessage ParseMessage(ChannelBuffer paramChannelBuffer, IServiceWireDecoder paramIServiceWireDecoder);
+       IServiceWireMessage ParseMessage(IByteBuffer buffer, IServiceWireDecoder decoder);
     }
 }

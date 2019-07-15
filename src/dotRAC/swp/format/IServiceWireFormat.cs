@@ -5,8 +5,10 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
+using DotNetty.Buffers;
 using dotRAC.core;
 using dotRAC.swp.codec;
+using dotRAC.swp.messages;
 
 namespace dotRAC.swp.format
 {
@@ -20,12 +22,12 @@ namespace dotRAC.swp.format
 
         IServiceWireCodec CreateCodec();
 
-        //void EncodeType(ChannelBuffer paramChannelBuffer, IServiceWireEncoder paramIServiceWireEncoder, MessageType paramMessageType);
+        void EncodeType(IByteBuffer buffer, IServiceWireEncoder paramIServiceWireEncoder, MessageType paramMessageType);
 
-        //MessageType DecodeType(ChannelBuffer paramChannelBuffer, IServiceWireDecoder paramIServiceWireDecoder);
+        MessageType DecodeType(IByteBuffer buffer, IServiceWireDecoder paramIServiceWireDecoder);
 
-        //void FormatMessage(ChannelBuffer paramChannelBuffer, IServiceWireEncoder paramIServiceWireEncoder, IServiceWireMessage paramIServiceWireMessage);
+        void FormatMessage(IByteBuffer buffer, IServiceWireEncoder paramIServiceWireEncoder, IServiceWireMessage paramIServiceWireMessage);
 
-        //IServiceWireMessage ParseMessage(ChannelBuffer paramChannelBuffer, IServiceWireDecoder paramIServiceWireDecoder, MessageType paramMessageType);
+        IServiceWireMessage ParseMessage(IByteBuffer buffer, IServiceWireDecoder paramIServiceWireDecoder, MessageType paramMessageType);
     }
 }

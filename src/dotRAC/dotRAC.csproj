@@ -9,7 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNetty.Handlers" Version="0.6.0" />
     <PackageReference Include="log4net" Version="2.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ibis\admin\service\" />
   </ItemGroup>
 
 </Project>

@@ -5,15 +5,19 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
+using System;
+using DotNetty.Buffers;
+
 namespace dotRAC.ibis.transport
 {
     public interface IV8MessageFormat
     {
-        //ChannelBuffer formatMessage(IV8Message paramIV8Message) throws V8ServiceFormatException;
+        IByteBuffer FormatMessage(IV8Message paramIV8Message);
 
-        //IV8Message parseMessage(ChannelBuffer paramChannelBuffer) throws V8ServiceFormatException;
+        IV8Message ParseMessage(IByteBuffer paramChannelBuffer);
 
-        //ChannelBuffer formatThrowable(Throwable paramThrowable);
-        //Throwable parseThrowable(ChannelBuffer paramChannelBuffer) throws V8ServiceFormatException;
+        IByteBuffer FormatThrowable(Exception paramThrowable);
+
+        Exception ParseThrowable(IByteBuffer paramChannelBuffer);
     }
 }

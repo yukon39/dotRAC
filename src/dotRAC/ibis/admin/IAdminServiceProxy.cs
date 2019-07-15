@@ -9,9 +9,9 @@ using System;
 using System.Collections.Generic;
 using dotRAC.ibis.service;
 
-namespace dotRAC.ibis.admin.service
+namespace dotRAC.ibis.admin
 {
-    public interface IAdminServiceProxy : IV8ServiceProxy
+    public interface IAgentAdminConnection : IV8ServiceProxy
     {
         void AuthenticateAgent(string paramString1, string paramString2);
         void Authenticate(Guid paramUUID, string paramString1, string paramString2);

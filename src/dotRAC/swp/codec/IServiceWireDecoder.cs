@@ -6,29 +6,30 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System;
+using DotNetty.Buffers;
 using dotRAC.swp.endpoints;
 
 namespace dotRAC.swp.codec
 {
     public interface IServiceWireDecoder
     {
-        //bool decodeBoolean(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //byte decodeByte(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //short decodeUnsignedByte(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //char decodeChar(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //short decodeShort(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //int decodeUnsignedShort(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //int decodeInt(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //long decodeUnsignedInt(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //long decodeLong(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //float decodeFloat(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //double decodeDouble(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //int decodeSize(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //int decodeNullableSize(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //string decodeString(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //Guid decodeUuid(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //ServiceWireType decodeType(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //EndpointId decodeEndpointId(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
-        //byte[] decodeByteArray(ChannelBuffer paramChannelBuffer) throws ServiceWireCodecException;
+        bool DecodeBoolean(IByteBuffer buffer);
+        byte DecodeByte(IByteBuffer buffer);
+        short DecodeUnsignedByte(IByteBuffer buffer);
+        char DecodeChar(IByteBuffer buffer);
+        short DecodeShort(IByteBuffer buffer);
+        int DecodeUnsignedShort(IByteBuffer buffer);
+        int DecodeInt(IByteBuffer buffer);
+        long DecodeUnsignedInt(IByteBuffer buffer);
+        long DecodeLong(IByteBuffer buffer);
+        float DecodeFloat(IByteBuffer buffer);
+        double DecodeDouble(IByteBuffer buffer);
+        int DecodeSize(IByteBuffer buffer);
+        int DecodeNullableSize(IByteBuffer buffer);
+        string DecodeString(IByteBuffer buffer);
+        Guid DecodeUuid(IByteBuffer buffer);
+        ServiceWireType DecodeType(IByteBuffer buffer);
+        EndpointId DecodeEndpointId(IByteBuffer buffer);
+        byte[] DecodeByteArray(IByteBuffer buffer);
     }
 }

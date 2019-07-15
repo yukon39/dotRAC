@@ -9,7 +9,7 @@ namespace dotRAC.ibis.admin.client
 {
     public interface IAgentAdminConnectorFactory
     {
-        IAgentAdminConnector CreateConnector(uint connectTimeout);
+        IAgentAdminConnector CreateConnector(long connectTimeout);
         
         //TODO: Add method to interface
         //IAgentAdminConnector createConnector(Timer paramTimer, Executor paramExecutor, long paramLong);

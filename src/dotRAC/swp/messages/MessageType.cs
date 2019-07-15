@@ -9,7 +9,6 @@ namespace dotRAC.swp.messages
 {
     public enum MessageType
     {
-
         NEGOTIATE = 0,
         CONNECT = 1,
         CONNECT_ACK = 2,

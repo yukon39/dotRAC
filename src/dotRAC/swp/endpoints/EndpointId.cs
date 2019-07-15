@@ -9,7 +9,7 @@ using System;
 
 namespace dotRAC.swp.endpoints
 {
-    internal class EndpointId : IComparable<EndpointId>
+    public class EndpointId : IComparable<EndpointId>
     {
         private readonly int id;
 

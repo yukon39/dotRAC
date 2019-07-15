@@ -13,9 +13,8 @@ using System.Threading.Tasks;
 
 namespace dotRAC.ibis.client
 {
-    public interface IV8ConnectionFactory
+    public interface IV8ConnectionFactory : IDisposable
     {
         IV8Connection CreateConnection();
-        void Shutdown();
     }
 }
