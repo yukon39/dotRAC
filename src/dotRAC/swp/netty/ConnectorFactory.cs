@@ -6,7 +6,9 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System;
+using System.Collections.Specialized;
 using System.Diagnostics.Contracts;
+using System.Timers;
 using dotRAC.core;
 using dotRAC.swp.codec;
 using dotRAC.swp.format;
@@ -17,14 +19,14 @@ namespace dotRAC.swp.netty
     {
         private readonly IServiceWireFormatFactory formatFactory;
 
-        public ConnectorFactory(IServiceWireCodecFactory codecFactory, IExceptionResolver throwableResolver)
+        public ConnectorFactory(IServiceWireCodecFactory codecFactory, IExceptionResolver exceptionResolver)
         {
             Contract.Requires(codecFactory != default);
 
-            formatFactory = new ServiceWireFormatFactory(codecFactory, throwableResolver);
+            formatFactory = new ServiceWireFormatFactory(codecFactory, exceptionResolver);
         }
 
-        public IServiceWireConnector CreateConnector()
+        public IServiceWireConnector CreateConnector(Timer timer, NameValueCollection properties)
         {
             throw new NotImplementedException();
         }
