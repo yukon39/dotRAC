@@ -5,13 +5,12 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-using System;
+using System.Net.Security;
 
-namespace dotRAC.core
+namespace DotRAC.Core.Security
 {
-    public interface IExceptionResolver
+    public interface ISslContextFactory
     {
-        string ResolveName(Exception exception);
-        Exception ResolveException(string name, string message);
+        SslStream CreateContext();
     }
 }

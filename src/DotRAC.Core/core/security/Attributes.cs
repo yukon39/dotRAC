@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dotRAC.core.security
+namespace DotRAC.Core.Security
 {
     public class Attributes
     {

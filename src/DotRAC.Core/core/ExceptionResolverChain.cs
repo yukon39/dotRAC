@@ -8,7 +8,7 @@ at http://mozilla.org/MPL/2.0/.
 using System;
 using System.Diagnostics.Contracts;
 
-namespace dotRAC.core
+namespace DotRAC.Core
 {
     public class ExceptionResolverChain : IExceptionResolver
     {
