@@ -12,7 +12,7 @@ using DotNetty.Transport.Channels;
 using DotRAC.SWP.Compression;
 using DotRAC.SWP.Format;
 
-namespace dotRAC.swp.netty.Internal
+namespace DotRAC.SWP.Netty.Internal
 {
     public class ClientChannelPipelineFactory
     {

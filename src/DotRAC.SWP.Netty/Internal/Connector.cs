@@ -13,11 +13,10 @@ using DotNetty.Common.Concurrency;
 using DotNetty.Common.Utilities;
 using DotNetty.Transport.Bootstrapping;
 using DotNetty.Transport.Channels.Groups;
-using DotRAC.SWP;
 using DotRAC.SWP.Format;
 using log4net;
 
-namespace dotRAC.swp.netty.Internal
+namespace DotRAC.SWP.Netty.Internal
 {
     public sealed class Connector : IServiceWireConnector
     {

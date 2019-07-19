@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
 
   <Import Project="$(MSBuildProjectDirectory)/../dotRAC.targets" />
@@ -9,18 +9,12 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="DotNetty.Handlers" Version="0.6.0" />
-    <PackageReference Include="log4net" Version="2.0.8" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ibis\admin\service\" />
-  </ItemGroup>
+  <PropertyGroup>
+    <AssemblyTitle>1C:Enterprise 8 Service Wire Protocol (Netty implementation)</AssemblyTitle>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DotRAC.Core\DotRAC.Core.csproj" />
-    <ProjectReference Include="..\DotRAC.SWP.Netty\DotRAC.SWP.Netty.csproj" />
     <ProjectReference Include="..\DotRAC.SWP\DotRAC.SWP.csproj" />
   </ItemGroup>
 

@@ -13,7 +13,7 @@ using dotRAC.ibis.client;
 using dotRAC.ibis.host;
 using dotRAC.ibis.server;
 using dotRAC.ibis.swp.Internal;
-using dotRAC.swp.netty;
+using DotRAC.SWP.Netty;
 using DotRAC.Core;
 using DotRAC.SWP;
 

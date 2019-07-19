@@ -7,13 +7,11 @@ at http://mozilla.org/MPL/2.0/.
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using DotNetty.Common.Utilities;
 
-namespace dotRAC.swp.netty.Internal
+namespace DotRAC.SWP.Netty.Internal
 {
     public class SwpTimer : ITimer
     {

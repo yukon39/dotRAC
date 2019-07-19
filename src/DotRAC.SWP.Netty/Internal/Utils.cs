@@ -8,7 +8,7 @@ at http://mozilla.org/MPL/2.0/.
 using System.Collections.Specialized;
 using DotNetty.Transport.Bootstrapping;
 
-namespace dotRAC.swp.netty.Internal
+namespace DotRAC.SWP.Netty.Internal
 {
     internal static class Utils
     {

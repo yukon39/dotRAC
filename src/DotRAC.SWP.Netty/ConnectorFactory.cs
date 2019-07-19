@@ -10,13 +10,12 @@ using System.Diagnostics.Contracts;
 using System.Timers;
 using DotNetty.Common.Concurrency;
 using DotNetty.Common.Utilities;
-using dotRAC.swp.netty.Internal;
+using DotRAC.SWP.Netty.Internal;
 using DotRAC.Core;
-using DotRAC.SWP;
 using DotRAC.SWP.Codec;
 using DotRAC.SWP.Format;
 
-namespace dotRAC.swp.netty
+namespace DotRAC.SWP.Netty
 {
     public class ConnectorFactory : IServiceWireConnectorFactory
     {

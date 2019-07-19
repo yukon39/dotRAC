@@ -7,11 +7,10 @@ at http://mozilla.org/MPL/2.0/.
 
 using System.Diagnostics.Contracts;
 using DotRAC.Core;
-using DotRAC.SWP;
 using DotRAC.SWP.Codec;
 using DotRAC.SWP.Endpoints;
 
-namespace dotRAC.swp.netty
+namespace DotRAC.SWP.Netty
 {
     public class ServerFactory : IServiceWireServerFactory
     {
