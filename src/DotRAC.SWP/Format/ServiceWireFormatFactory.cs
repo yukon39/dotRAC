@@ -10,7 +10,7 @@ using DotRAC.SWP.Codec;
 
 namespace DotRAC.SWP.Format
 {
-    internal class ServiceWireFormatFactory : IServiceWireFormatFactory
+    public class ServiceWireFormatFactory : IServiceWireFormatFactory
     {
         private readonly IServiceWireCodecFactory codecFactory;
         private readonly IExceptionResolver exceptionResolver;

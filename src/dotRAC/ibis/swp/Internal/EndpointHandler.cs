@@ -9,8 +9,8 @@ using System;
 using System.Diagnostics.Contracts;
 using DotNetty.Buffers;
 using dotRAC.ibis.host;
-using dotRAC.swp.codec;
-using dotRAC.swp.endpoints;
+using DotRAC.SWP.Codec;
+using DotRAC.SWP.Endpoints;
 using log4net;
 
 namespace dotRAC.ibis.swp.Internal

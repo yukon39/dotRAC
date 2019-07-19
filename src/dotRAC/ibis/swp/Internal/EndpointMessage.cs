@@ -7,7 +7,7 @@ at http://mozilla.org/MPL/2.0/.
 
 using System.Diagnostics.Contracts;
 using DotNetty.Buffers;
-using dotRAC.swp.endpoints;
+using DotRAC.SWP.Endpoints;
 
 namespace dotRAC.ibis.swp.Internal
 {

@@ -6,7 +6,7 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System;
-using dotRAC.core;
+using DotRAC.Core;
 using dotRAC.ibis.service;
 
 namespace dotRAC.ibis

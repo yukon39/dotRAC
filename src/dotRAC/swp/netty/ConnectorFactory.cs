@@ -5,13 +5,16 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-using System;
 using System.Collections.Specialized;
 using System.Diagnostics.Contracts;
 using System.Timers;
-using dotRAC.core;
-using dotRAC.swp.codec;
-using dotRAC.swp.format;
+using DotNetty.Common.Concurrency;
+using DotNetty.Common.Utilities;
+using dotRAC.swp.netty.Internal;
+using DotRAC.Core;
+using DotRAC.SWP;
+using DotRAC.SWP.Codec;
+using DotRAC.SWP.Format;
 
 namespace dotRAC.swp.netty
 {
@@ -26,9 +29,11 @@ namespace dotRAC.swp.netty
             formatFactory = new ServiceWireFormatFactory(codecFactory, exceptionResolver);
         }
 
-        public IServiceWireConnector CreateConnector(Timer timer, NameValueCollection properties)
+        public IServiceWireConnector CreateConnector(IExecutor executor, Timer timer, NameValueCollection properties)
         {
-            throw new NotImplementedException();
+            ITimer swpTimer = (timer != default) ? (ITimer)new SwpTimer(timer) : new HashedWheelTimer();
+
+            return new Connector(executor, swpTimer, formatFactory, properties);
         }
     }
 }

@@ -6,6 +6,7 @@
   <PropertyGroup>
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <Configurations>Debug;Release;ReleaseNetStandard</Configurations>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +16,11 @@
 
   <ItemGroup>
     <Folder Include="ibis\admin\service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DotRAC.Core\DotRAC.Core.csproj" />
+    <ProjectReference Include="..\DotRAC.SWP\DotRAC.SWP.csproj" />
   </ItemGroup>
 
 </Project>

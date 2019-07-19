@@ -7,9 +7,9 @@ at http://mozilla.org/MPL/2.0/.
 
 using System;
 using DotNetty.Buffers;
-using dotRAC.swp.codec;
-using dotRAC.swp.endpoints;
-using dotRAC.swp.format;
+using DotRAC.SWP.Codec;
+using DotRAC.SWP.Endpoints;
+using DotRAC.SWP.Format;
 
 namespace dotRAC.ibis.swp.Internal
 {

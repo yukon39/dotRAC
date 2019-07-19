@@ -6,11 +6,11 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System;
-using dotRAC.core;
 using dotRAC.ibis.service;
 using dotRAC.ibis.swp;
 using dotRAC.ibis.transport;
-using dotRAC.swp.codec;
+using DotRAC.Core;
+using DotRAC.SWP.Codec;
 
 namespace dotRAC.ibis.admin.Internal
 {

@@ -5,16 +5,17 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
+using System;
 using System.Diagnostics.Contracts;
 using System.Timers;
-using dotRAC.core;
+using DotNetty.Common.Concurrency;
 using dotRAC.ibis.client;
 using dotRAC.ibis.host;
 using dotRAC.ibis.server;
 using dotRAC.ibis.swp.Internal;
-using dotRAC.swp;
-using dotRAC.swp.codec;
 using dotRAC.swp.netty;
+using DotRAC.Core;
+using DotRAC.SWP;
 
 namespace dotRAC.ibis.swp
 {
@@ -79,15 +80,10 @@ namespace dotRAC.ibis.swp
             return server;
         }
 
-        public IV8ConnectionFactory CreateConnectionFactory()
+        public IV8ConnectionFactory CreateConnectionFactory(Timer timer, IExecutor executor, long connectTimeout)
         {
-            Contract.Requires(connectorFactory != default);
-            return new V8ConnectionFactory(connectorFactory);
-        }
-
-        public IV8ConnectionFactory CreateConnectionFactory(Timer paramTimer, long paramLong)
-        {
-            throw new System.NotImplementedException();
+            Contract.Requires<InvalidOperationException>(connectorFactory != default, "connectorFactory");
+            return new V8ConnectionFactory(connectorFactory, timer, executor, connectTimeout);
         }
     }
 }

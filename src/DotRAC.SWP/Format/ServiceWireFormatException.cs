@@ -9,7 +9,7 @@ using System;
 
 namespace DotRAC.SWP.Format
 {
-    internal class ServiceWireFormatException : ServiceWireException
+    public class ServiceWireFormatException : ServiceWireException
     {
         public ServiceWireFormatException() : base() { }
 

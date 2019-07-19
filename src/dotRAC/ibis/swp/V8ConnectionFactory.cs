@@ -6,9 +6,12 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System;
+using System.Collections.Specialized;
 using System.Diagnostics.Contracts;
+using System.Timers;
+using DotNetty.Common.Concurrency;
 using dotRAC.ibis.client;
-using dotRAC.swp;
+using DotRAC.SWP;
 
 namespace dotRAC.ibis.swp
 {
@@ -17,11 +20,16 @@ namespace dotRAC.ibis.swp
         private readonly IServiceWireConnector connector;
 
 
-        public V8ConnectionFactory(IServiceWireConnectorFactory connectorFactory)
+        public V8ConnectionFactory(IServiceWireConnectorFactory connectorFactory, Timer timer, IExecutor executor, long connectTimeout)
         {
-            Contract.Requires(connectorFactory != default);
+            Contract.Requires<InvalidOperationException>(connectorFactory != default, "connectorFactory");
 
-            connector = connectorFactory.CreateConnector();
+            NameValueCollection properties = new NameValueCollection
+            {
+                { ProtocolConstants.GetProtocolParameterName("connect.timeout"), connectTimeout.ToString() }
+            };
+
+            connector = connectorFactory.CreateConnector(executor, timer, properties);
         }
 
         public IV8Connection CreateConnection()

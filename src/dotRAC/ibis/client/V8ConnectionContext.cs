@@ -8,7 +8,7 @@ at http://mozilla.org/MPL/2.0/.
 using System;
 using System.Diagnostics.Contracts;
 using System.Net.Security;
-using dotRAC.core.security;
+using DotRAC.Core.Security;
 
 namespace dotRAC.ibis.client
 {

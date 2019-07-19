@@ -11,7 +11,7 @@ using System.Diagnostics.Contracts;
 using System.Net;
 using dotRAC.ibis.client;
 using dotRAC.ibis.transport;
-using dotRAC.swp;
+using DotRAC.SWP;
 using log4net;
 
 namespace dotRAC.ibis.swp

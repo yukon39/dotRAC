@@ -6,6 +6,7 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using System.Timers;
+using DotNetty.Common.Concurrency;
 
 namespace dotRAC.ibis.admin.client
 {
@@ -14,6 +15,6 @@ namespace dotRAC.ibis.admin.client
 
         public IAgentAdminConnector CreateConnector(long connectTimeout) => new AgentAdminConnector(connectTimeout);
 
-        public IAgentAdminConnector CreateConnector(Timer timer, long connectTimeout) => new AgentAdminConnector(timer, connectTimeout);
+        public IAgentAdminConnector CreateConnector(Timer timer, IExecutor executor, long connectTimeout) => new AgentAdminConnector(timer, executor, connectTimeout);
     }
 }

@@ -8,6 +8,7 @@ at http://mozilla.org/MPL/2.0/.
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Timers;
+using DotNetty.Common.Concurrency;
 using dotRAC.ibis.admin.Internal;
 using dotRAC.ibis.client;
 using dotRAC.ibis.service;
@@ -35,10 +36,10 @@ namespace dotRAC.ibis.admin.client
 
             V8Integration v8Integration = new V8Integration(default);
 
-            connectionFactory = v8Integration.CreateConnectionFactory(timer, connectTimeout);
+            connectionFactory = v8Integration.CreateConnectionFactory(timer, default, connectTimeout);
         }
 
-        internal AgentAdminConnector(Timer timer, long connectTimeout) : this()
+        internal AgentAdminConnector(Timer timer, IExecutor executor, long connectTimeout) : this()
         {
             Contract.Requires(timer != default);
 
@@ -46,7 +47,7 @@ namespace dotRAC.ibis.admin.client
 
             V8Integration v8Integration = new V8Integration(default);
 
-            connectionFactory = v8Integration.CreateConnectionFactory(timer, connectTimeout);
+            connectionFactory = v8Integration.CreateConnectionFactory(timer, executor, connectTimeout);
         }
 
         public IAgentAdminConnection Connect(string host, ushort port)

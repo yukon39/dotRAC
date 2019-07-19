@@ -16,6 +16,6 @@ namespace dotRAC.ibis.client
 
         bool IsSame(IV8Connection paramIV8Connection);
 
-        void Start(IV8ConnectionContext context);
+        new void Start(IV8ConnectionContext context);
     }
 }

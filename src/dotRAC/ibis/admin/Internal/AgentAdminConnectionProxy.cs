@@ -7,11 +7,9 @@ at http://mozilla.org/MPL/2.0/.
 
 using System;
 using System.Collections.Generic;
-using dotRAC.core;
 using dotRAC.ibis.service;
-using dotRAC.ibis.swp;
 using dotRAC.ibis.transport;
-using dotRAC.swp.codec;
+using DotRAC.Core;
 
 namespace dotRAC.ibis.admin.Internal
 {
@@ -21,7 +19,7 @@ namespace dotRAC.ibis.admin.Internal
 
         public static readonly List<string> ServiceVersions = new List<string>(new string[] { "3.0", "4.0", "5.0", "6.0" });
         public static readonly IV8MessageFormatFactory FormatFactory = new ServiceManagerFormatFactory(ExceptionResolver);
-        
+
         public AgentAdminConnectionProxy(IV8Transport transport) : base(transport) { }
 
         public void AddAuthentication(Guid paramUUID, string paramString1, string paramString2)

@@ -5,15 +5,13 @@ was not distributed with this file, You can obtain one
 at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
-using System.Timers;
-using DotNetty.Common.Concurrency;
+using System.Collections.Specialized;
+using DotNetty.Transport.Bootstrapping;
 
-namespace dotRAC.ibis.admin.client
+namespace dotRAC.swp.netty.Internal
 {
-    public interface IAgentAdminConnectorFactory
+    internal static class Utils
     {
-        IAgentAdminConnector CreateConnector(long connectTimeout);
-        
-        IAgentAdminConnector CreateConnector(Timer paramTimer, IExecutor paramExecutor, long paramLong);
+        public static void SetupBootstrapProperties(Bootstrap bootstrap, NameValueCollection properties) { }
     }
 }

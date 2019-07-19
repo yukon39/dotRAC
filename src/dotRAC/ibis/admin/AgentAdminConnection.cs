@@ -31,11 +31,11 @@ namespace dotRAC.ibis.admin
 
             catch (V8UnsupportedServiceException e)
             {
-                //throw new AgentAdminConnectionException(e);
+                throw new AgentAdminConnectionException("Connction error" ,e);
             }
             catch (V8Exception e)
             {
-                //throw new AgentAdminConnectionException(e);
+                throw new AgentAdminConnectionException("Connction error", e);
             }
         }
 

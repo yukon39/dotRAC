@@ -6,7 +6,7 @@ at http://mozilla.org/MPL/2.0/.
 ----------------------------------------------------------*/
 
 using dotRAC.ibis.server;
-using dotRAC.swp;
+using DotRAC.SWP;
 
 namespace dotRAC.ibis.swp
 {
